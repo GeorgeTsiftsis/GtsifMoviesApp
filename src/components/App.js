@@ -55,10 +55,7 @@ const App = () => {
   const numberPages = Math.floor(totalResults / 20);
 
   return (
-    <div
-      style={{ height: "100%" }}
-      className="flex flex-col items-center bg-black  "
-    >
+    <div className="flex flex-col items-center bg-black  ">
       <NavBar />
       {currentMovie == null ? (
         <div>

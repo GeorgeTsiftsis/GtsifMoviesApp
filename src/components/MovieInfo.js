@@ -6,7 +6,10 @@ function MovieInfo(props) {
     props.currentMovie;
 
   return (
-    <div className="flex md:flex-row flex-col text-white items-center justify-center ">
+    <div
+      style={{ height: "900px" }}
+      className="flex md:flex-row  flex-col text-white items-center justify-center "
+    >
       <div>
         {poster_path == null ? (
           <Loading />
