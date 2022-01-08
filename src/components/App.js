@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import SearchArea from "./SearchArea";
 import Pagination from "./Pagination";
 import MovieInfo from "./MovieInfo";
+import HomeScreenDetails from "./HomeScreenDetails";
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchTerm, getSearchTerm] = useState("");
@@ -57,9 +58,11 @@ const App = () => {
   return (
     <div className="flex flex-col items-center bg-black  ">
       <NavBar />
+
       {currentMovie == null ? (
         <div>
-          <SearchArea handleSubmit={handleSubmit} handleChange={handleChange} />{" "}
+          <SearchArea handleSubmit={handleSubmit} handleChange={handleChange} />
+          {totalResults === 0 ? <HomeScreenDetails /> : ""}
           <MovieList viewMovieInfo={viewMovieInfo} movies={movies} />
         </div>
       ) : (
