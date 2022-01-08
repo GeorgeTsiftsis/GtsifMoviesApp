@@ -10,7 +10,7 @@ const Movie = (props) => {
       ) : (
         <div className="p-4 flex flex-col   md:flex-row max-w-4xl" key={id}>
           <img
-            className="rounded-2xl w-full py-2  md:w-2/3 md:pr-4"
+            className="rounded-2xl w-full py-2  md:w-2/4 h-full md:pr-4"
             alt="imageofmovie"
             src={`https://themoviedb.org/t/p/w300/${image}`}
           />
