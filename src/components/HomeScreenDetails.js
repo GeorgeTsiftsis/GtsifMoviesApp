@@ -3,7 +3,7 @@ import React from "react";
 function HomeScreenDetails() {
   return (
     <div className="flex flex-col text-white items-center justify-center">
-      <img src={"./cinema.jpg"} alt="cinema" />
+      <img src={"./cinema.png"} alt="cinema" />
       <h1 className="max-w-2xl py-12 h-80">
         A page in which a user could search for a movie and learn details about
         it. Built it with React and TailwindCSS. Utilise
