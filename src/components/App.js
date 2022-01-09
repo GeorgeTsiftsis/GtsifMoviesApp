@@ -12,11 +12,13 @@ const App = () => {
   const [currentPage, getCurrentPage] = useState(1);
   const [currentMovie, getCurrentMovie] = useState(null);
 
+  const api = process.env.REACT_APP_API_KEY;
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=e38a8e0e5cfb85c047e2aa07b2a8f6c2&language=en-US&sort_by=popularity.desc&include_adult=false&query=${searchTerm}`
+      `https://api.themoviedb.org/3/search/movie?api_key=${api}&language=en-US&sort_by=popularity.desc&include_adult=false&query=${searchTerm}`
     )
       .then((data) => data.json())
       .then((data) => {
@@ -32,7 +34,7 @@ const App = () => {
 
   const nextPage = (pageNumber) => {
     fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=e38a8e0e5cfb85c047e2aa07b2a8f6c2&language=en-US&sort_by=popularity.desc&include_adult=false&query=${searchTerm}&page=${pageNumber}`
+      `https://api.themoviedb.org/3/search/movie?api_key=${api}&language=en-US&sort_by=popularity.desc&include_adult=false&query=${searchTerm}&page=${pageNumber}`
     )
       .then((data) => data.json())
       .then((data) => {
