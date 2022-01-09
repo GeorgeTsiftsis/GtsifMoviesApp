@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MovieList from "./MovieList";
 import NavBar from "./NavBar";
 import SearchArea from "./SearchArea";
@@ -13,7 +13,9 @@ const App = () => {
   const [currentMovie, getCurrentMovie] = useState(null);
 
   const api = process.env.REACT_APP_API_KEY;
-
+  useEffect(() => {
+    console.log(movies);
+  }, [movies, totalResults, currentPage]);
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -26,7 +28,6 @@ const App = () => {
         getTotalResults(data.total_results);
       });
   };
-  console.log(movies);
 
   const handleChange = (e) => {
     getSearchTerm(e.target.value);
@@ -50,7 +51,6 @@ const App = () => {
 
     getCurrentMovie(newCurrentMovie);
   };
-
   const closeMovieInfo = () => {
     getCurrentMovie(null);
   };
