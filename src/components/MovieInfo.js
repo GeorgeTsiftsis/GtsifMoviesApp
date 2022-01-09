@@ -26,7 +26,7 @@ function MovieInfo(props) {
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.9 }}
-          transition={({ delay: 0.7 }, { yoyo: 800 })}
+          transition={({ delay: 0.7 }, { repeat: 800 })}
           className=" text-xl text-red-700 "
         >
           Date Realeased {release_date}
