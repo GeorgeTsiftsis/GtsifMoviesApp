@@ -2,14 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Movie = (props) => {
-  const { original_title, overview, id, image } = props;
+  const { original_title, overview, image, id } = props;
 
   return (
     <div>
       {props.image === null ? (
         ""
       ) : (
-        <div className="p-4 flex flex-col    md:flex-row max-w-4xl" key={id}>
+        <div key={id} className="p-4 flex flex-col    md:flex-row max-w-4xl">
           <motion.img
             initial="hidden"
             animate="visible"
