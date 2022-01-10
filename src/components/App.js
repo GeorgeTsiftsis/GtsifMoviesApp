@@ -14,7 +14,7 @@ const App = () => {
 
   const api = process.env.REACT_APP_API_KEY;
 
-  /*i know that it will be perfect to use useEffect. First to avoid purposeless API calls 
+  /*I know that it will be perfect to use useEffect. First to avoid purposeless API calls 
 and then complete a render cycle. I tried it but there's a part that 
 i did not comprehend what i did so i decide to keep it out */
 
