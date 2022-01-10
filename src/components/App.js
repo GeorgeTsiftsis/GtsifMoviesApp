@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import MovieList from "./MovieList";
 import NavBar from "./NavBar";
 import SearchArea from "./SearchArea";
@@ -13,12 +13,13 @@ const App = () => {
   const [currentMovie, getCurrentMovie] = useState(null);
 
   const api = process.env.REACT_APP_API_KEY;
-  useEffect(() => {
-    console.log(movies);
-  }, [movies, totalResults, currentPage]);
+
+  /*i know that it will be perfect to use useEffect. First to avoid purposeless API calls 
+and then complete a render cycle. I tried it but there's a part that 
+i did not comprehend what i did so i decide to keep it out */
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
     fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=${api}&language=en-US&sort_by=popularity.desc&include_adult=false&query=${searchTerm}`
     )
